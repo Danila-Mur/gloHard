@@ -1,31 +1,19 @@
-const dayOfWeekRU = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-const dayOfWeekEN = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-const allDayOfWeek = [dayOfWeekRU, dayOfWeekEN];
+const someString = '     0123456789012345678901234567890123456789 ';
+const someString1 = '     012345678901234567890123456789 ';
 
-let lang = 'en';
+const checkStr = (str) => {
+  if (typeof str !== 'string') {
+    console.log('Передана не строка');
+    return;
+  }
 
-if (lang === 'en') {
-  console.log(dayOfWeekEN);
-} else if (lang === 'ru') {
-  console.log(dayOfWeekRU);
-} else {
-  console.log('Some wrong...');
-}
+  if (str.length > 30) {
+    str = str.trim().slice(0, 30);
+    return str + '...';
+  }
 
-switch (lang) {
-  case 'en':
-    console.log(dayOfWeekEN);
-    break;
-  case 'ru':
-    console.log(dayOfWeekRU);
-    break;
-  default:
-    console.log('Some wrong...');
-}
+  return str;
+};
 
-lang === 'ru' ? console.log(allDayOfWeek[0]) : console.log(allDayOfWeek[1]);
-
-const namePerson = 'Артем';
-
-namePerson === 'Артем' ? console.log('директор') : console.log('студент');
-namePerson === 'Александр' ? console.log('преподаватель') : console.log('студент');
+console.log(checkStr(someString));
+console.log(checkStr(someString1));
