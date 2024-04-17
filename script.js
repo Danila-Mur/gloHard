@@ -1,19 +1,25 @@
-const someString = '     0123456789012345678901234567890123456789 ';
-const someString1 = '     012345678901234567890123456789 ';
+const arr = ['124214512', '214125125', '4512521', '01412', '125215', '422155', '5325331'];
 
-const checkStr = (str) => {
-  if (typeof str !== 'string') {
-    console.log('Передана не строка');
-    return;
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i].slice(0, 1) === '2' || arr[i].slice(0, 1) === '4') {
+    console.log(arr[i]);
   }
+}
 
-  if (str.length > 30) {
-    str = str.trim().slice(0, 30);
-    return str + '...';
+arr.find((el) => {
+  if (el[0] === '2' || el[0] === '4') {
+    console.log(el);
   }
+});
 
-  return str;
-};
-
-console.log(checkStr(someString));
-console.log(checkStr(someString1));
+//
+const num = 100;
+for (let i = 1; i <= num; i++) {
+  for (let j = 2; j <= i; j++) {
+    if (i % j === 0 && j < i) {
+      break;
+    } else if (j === i) {
+      console.log(i, 'Делители этого числа 1 и ' + i);
+    }
+  }
+}
